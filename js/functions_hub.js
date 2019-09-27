@@ -1,4 +1,3 @@
-
 var INFINITO = 9999999999.9;
 
 function sortByX(array_Points){
@@ -17,25 +16,35 @@ function sortByX(array_Points){
 	}
 }
 
+function getDistance(pt1, pt2){
+	
+	var x1 = pt1.x;
+	var x2 = pt2.x;
+
+	var y1 = pt1.y;
+	var y2 = pt2.y;
+
+	return Math.sqrt( ( Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2) ) );
+}
+
 function divideAndConquer(array_Points) {
 
 	//console.log(array_Points);
+	var mixPoint = new PointPair(array_Points[0],array_Points[1]);
+	mixPoint.distance = getDistance(array_Points[0], array_Points[1]);
+	var min = mixPoint.distance;
 
-	if(array_Points.length <= 1){
-		var mixPoint = new PointPair();
-		mixPoint.distance = INFINITO;
-		return mixPoint;
-	}
-	if(array_Points.length == 2) {
-		var x1 = array_Points[0].x;
-		var x2 = array_Points[1].x;
+	if(array_Points.length <= 3) {
 
-		var y1 = array_Points[0].y;
-		var y2 = array_Points[1].y;
+	    for (var i = 0; i < array_Points.length; ++i)  
+    	    for (var j = i+1; j < array_Points.length; ++j)  
+        	    if (getDistance(array_Points[i], array_Points[j]) < min) {
+            	    var mixPoint = new PointPair(array_Points[0],array_Points[1]);
+					mixPoint.distance = getDistance(array_Points[0], array_Points[1]);
+            	    min = getDistance(array_Points[i], array_Points[j]);
+        	    }
+    	return mixPoint;  
 
-		var mixPoint = new PointPair(array_Points[0],array_Points[1]);
-		mixPoint.distance = Math.sqrt( ( Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2) ) );
-		return mixPoint;
 	}
 
 	var mix1, mix2, mix3;
@@ -49,7 +58,7 @@ function divideAndConquer(array_Points) {
 	
 	if(left.length - 1 > 0) {
 		middlePoint = new PointPair( left[left.length - 1], right[0] );
-		middlePoint.distance = Math.sqrt( Math.pow(middlePoint.pt1.x - middlePoint.pt2.x, 2) + Math.pow( middlePoint.pt1.y - middlePoint.pt2.y, 2) );
+		middlePoint.distance = getDistance(left[left.length - 1], right[0] );
 	}
 	else{
 		console.log(left);

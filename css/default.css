@@ -39,8 +39,6 @@
 }
 
 #canvasContainer canvas {
-	width: 600px;
-  	height: 500px;
   	border: 3px solid #bbb;
   	position: relative;
   	left: 0;

@@ -18,7 +18,8 @@ class Render{
             ctx.fillStyle = "#000000";
 
         ctx.beginPath();
-        ctx.arc(x + 50, y + 50, raio, 0, 2 * Math.PI);
+        ctx.scale(6, 6);
+        ctx.arc(x + 50 , y + 50, raio, 0, 2 * Math.PI);
         ctx.fill();
 
         ctx.restore();
