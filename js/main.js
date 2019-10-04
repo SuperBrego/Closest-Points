@@ -7,7 +7,7 @@ function start(){
 	canvas = document.getElementById("drawArea");
 	context = canvas.getContext("2d");
 	pointSaver = new PointSaver(canvas, context);
-
+	points_interest = [];
 }
 
 function newRNDPoints(){

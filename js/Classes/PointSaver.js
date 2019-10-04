@@ -8,8 +8,6 @@ class PointSaver{
 
     	this.temporaryLocations = [];
 		this.points = [];
-		this.points_interest;
-
 	}
 
 	run(){
@@ -25,9 +23,10 @@ class PointSaver{
 			sortByX(this.points);
 			if(this.points.length > 2){
 				points_interest = divideAndConquer(this.points);
-				console.log(points_interest);
 			}
     	}
+
+    	this.render.paintPointsInterest();
 
 	}
 
