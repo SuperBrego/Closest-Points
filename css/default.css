@@ -1,41 +1,17 @@
 ﻿body {
- background-color:bisque;
+ background-color: lightgray;
+ font-family: arial;
 }
 
-.card {
-    background-color:cornflowerblue;
-    width:200px;
-    height:50px;
-}
-.button-container{
-	display: flex;
-}
-.button{
-	width: fit-content;
-	padding: 5px;
-	margin: 5px;
-	border-radius:25px;
-}
-.red{
-	background-color: red;
-}
-.green{
-	background-color: green;
-}
-.blue{
-	background-color: gold;
-}
-.box-container{
-	display: flex;
-	flex-wrap: wrap;
-	background-color: black;
-	border-radius: 16px;
-}
-.slot-container{
-	background-color: white;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 25px;
+#title{
+	background-color: black; 
+	border-color: #cccc00; 
+	border-radius: 10px; 
+	border-style: solid; 
+	color: darkkhaki; 
+	font-size: 20px; 
+	margin: 15px; 
+	padding: 10px;
 }
 
 #canvasContainer canvas {
@@ -44,4 +20,17 @@
   	left: 0;
   	float: left;
   	background-color: white;
+}
+
+#parameterTable {
+
+}
+
+#parameterTable thead {
+	font-family: verdana;
+	font-size: 24px;
+}
+
+#parameterTable td {
+	padding: 5px;
 }

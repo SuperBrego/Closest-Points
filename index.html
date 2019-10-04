@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -8,29 +9,64 @@
     <link href="css/default.css" rel="stylesheet" />
 
     <script src="js/main.js"></script>
-    <script src="js/uiTest.js"></script>
+    <script src="js/Classes/PointSaver.js"></script>
     <script src="js/Classes/Point.js"></script>
     <script src="js/Classes/PointPair.js"></script>
     <script src="js/Render.js"></script>
     <script src="js/functions_hub.js"></script>
+
 </head>
 
-<body >
+<body>
+
+    <center>
+        <div id="title">
+            <span style="font-size: 24px;"><b>Closests Points</b></span></div>
+    </center>
 
     <div id="canvasContainer">
-        <canvas id="drawArea" width="600" height="500">
+        <canvas id="drawArea" width="800" height="550">
           Seu navegador não suporta o Canvas do HTML5. <br />
           Procure atualizá-lo.
-        <script type="text/javascript">
-            start();
-        </script>
-
+          <script type="text/javascript">
+              start();
+              pointSaver.run();
+          </script>
         </canvas>
+        <div id="infoAdder">
+            <table border='1' id="parameterTable">
+                <thead>
+                    <tr>
+                        <td colspan="4">
+                            <center>
+                                <span style="color: blue;">G</span><span style="color: red;">o</span><span style="color: yellow;">o</span><span style="color: blue;">g</span><span style="color: green;">l</span><span style="color: red;">e</span>
+                            </center>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">
+                            <center>
+                                <button type="submit" style="margin-left: 10px;" onclick= pointSaver.clearPoints() >
+                                Limpar Pontos</button>
+                            </center>
+                        </td><!--
+                        <td colspan="2">
+                            
+                            <center>
+                                <button type="submit" style="margin-left: 10px;" onclick= newRNDPoints()>
+                                Novos Pontos</button><br>
+                                <button type="submit" style="margin-left: 10px;" onclick= newRNDPoints()>
+                                Pontos Originais</button>
+                            </center>
+                        </td>-->
+                    </tr>
+                </tbody>
+            </table>            
+        </div>
     </div>
 
 </body>
 
-<footer>
-
-</footer>
 </html>

@@ -1,12 +1,28 @@
 ﻿
 var points_interest;
-var canvas;
-var context;
+var render;
 
 function start(){
 
 	canvas = document.getElementById("drawArea");
 	context = canvas.getContext("2d");
+	pointSaver = new PointSaver(canvas, context);
+
+}
+
+function newRNDPoints(){
+
+	var min = 0.5;
+	var max = canvas.width - 50;
+	var arrayPairs = [];
+	for(var i = 0; i < 16; i++){
+		arrayPairs.push( new Point(
+			Math.random() * (max - min) + min ),
+			Math.random() * (max - min) + min );
+	}
+}
+
+function originalPoints(){
 
 	var arrayPairs = [];
 	arrayPairs.push( 
@@ -28,25 +44,13 @@ function start(){
 			new Point(11.5, -4)
 	);
 
-	//console.log(arrayPairs);
-
 	sortByX(arrayPairs);
 	
 	points_interest = divideAndConquer(arrayPairs);
-
-	var render = new Render(context);
 
 	for(var i = 0; i < arrayPairs.length; i++){
 		render.drawPoints( arrayPairs[i].x, arrayPairs[i].y, 1);
 	}
 
-	console.log(points_interest);
 }
 
-function newRNDPoints(){
-
-	var min, max;
-
-	Math.random() * (max - min) + min;
-
-}

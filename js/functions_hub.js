@@ -66,13 +66,15 @@ function divideAndConquer(array_Points) {
 		middlePoint.distance = INFINITO;
 	}
 
+	/*
 	console.log("Left: " + left.distance + "\nPoint: " + left.pt1.to_String() + " - " + left.pt2.to_String());
 	console.log("Right: " + right.distance + "\nPoint: " + right.pt1.to_String() + " - " + right.pt2.to_String());
 	if(middlePoint.distance != INFINITO)
 		console.log("middle: " + middlePoint.distance + "\nPoint: " 
 			 + middlePoint.pt1.to_String() + " - " + middlePoint.pt2.to_String());
 	else console.log("middle: " + middlePoint.distance);
-
+	*/
+	
 	if (left.distance < right.distance && left.distance < middlePoint.distance) {
 		return left;
 	}
